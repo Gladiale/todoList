@@ -26,20 +26,20 @@ function add(todo) {
   if (todoText) {
     const li = document.createElement('li');
     li.innerText = todoText;
-    li.classList.add("list-group-item");
+    li.classList.add('list-group-item');
 
     if (todo && todo.completed) {
-      li.classList.add("text-decoration-line-through");
+      li.classList.add('text-decoration-line-through');
     }
 
-    li.addEventListener("contextmenu", function (event) {
+    li.addEventListener('contextmenu', function (event) {
       event.preventDefault();
       li.remove();
       saveData();
     });
 
     li.addEventListener('click', function () {
-      li.classList.toggle("text-decoration-line-through");
+      li.classList.toggle('text-decoration-line-through');
       saveData();
     })
 
@@ -56,7 +56,7 @@ function saveData() {
   lists.forEach(list => {
     let todo = {
       text: list.innerText,
-      completed: list.classList.contains("text-decoration-line-through")
+      completed: list.classList.contains('text-decoration-line-through')
     };
     todos.push(todo);
   });
